@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,48 +8,61 @@
     <title>Memotest</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <img class="img" src="imagenes/fondo.jpg" alt="fondo">
     <div id="main-box" class="main-box">
-    <div class="container">
-        <h1>Memotest</h1>
-        <p class="p1"> Hola!  Vamos  a  jugar  al  memotest</p>
-        <p class="p2">Pero  antes  de  empezar...</p>
-        <p class="p3">Cuál  es  tu  Nombre?</p>
-           <div class="input-box">
-            <input type="text" id="inputTask" class="task" placeholder="Tu nombre">
-        </div>
+        <div class="container">
+            <h1>Memotest</h1>
+            <p class="p1"> Hola! Vamos a jugar al memotest</p>
+            <p class="p2">Pero antes de empezar...</p>
+            <p class="p3">Cuál es tu Nombre?</p>
+            <div class="input-box">
+                <input type="text" id="inputTask" class="task" placeholder="Tu nombre">
+            </div>
             <span>Con qué dificultad te gustaría jugar?</span>
             <div class="btn">
-            <button id="btn1" onclick="addItem()"class="btn1">FACIL</button>
-            <button id= "btn2" onclick="addItem()"class="btn2">INTERMEDIO</button>
-            <button id= "btn3" onclick="addItem()"class="btn3">EXPERTO</button>
+                <button id="btn1" onclick="addItem(event)" class="btn1">FACIL</button>
+                <button id="btn2" onclick="addItem(event)" class="btn2">INTERMEDIO</button>
+                <button id="btn3" onclick="addItem(event)" class="btn3">EXPERTO</button>
+            </div>
         </div>
     </div>
-</div>
-<div id="box2" class="box2 hide">
-    <h1>Memotest</h1>
-    <p class="p1">Hola ! </p>
-    <p class="p2">Encontrá todos los pares en menos de  intentos</p>
-    <p class="p3">Nivel</p>
-    <img class="imgg" src="imagenes/alce.jpg" alt="">
-    <img class="imgg" src="imagenes/epelante.jpg" alt="">
-    <img class="imgg" src="imagenes/nena.jpg" alt="">
-    <img class="imgg" src="imagenes/peces.jpg" alt="">
-    <img class="imgg" src="imagenes/unichancho.jpg" alt="">
-    <img class="imgg" src="imagenes/zapas.jpg" alt="">
-    <img class="imgg" src="imagenes/tapada.jpg" alt="">
-    <!--<div id="tiny-box">
-        <p id="p-tiny-box" >Intentos</p>
-    </div>-->
-</div>
+    <div id="box2" class="box2 hide">
+        <h1>Memotest</h1>
+        <span id="span">Hola </span>
+        <p class="p2">Encontrá todos los pares en menos de
+            <span id="p1" class="p4"></span>
+            <span class="p5">intentos</span>
+        </p>
+
+        <p id="p2" class="p3"></p>
+        <div class="box-img">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+            <img class="imgg" src="imagenes/tapada.jpg" alt="">
+        </div>
+        <div class="intentos">
+            <span>Intentos:</span>
+        </div>
+    </div>
 
     <script src="./main.js"></script>
 </body>
+
 </html>

@@ -48,6 +48,8 @@ p, span{
     text-align: center;
     margin-right: 10%;
     margin-left:10%;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
 }
 
@@ -56,23 +58,59 @@ span{
     font-weight: 800;
 }
 
-.p1{
-  margin-top: 2px;
-  margin-bottom: 2px;
-  word-spacing: 2px;
-}
 
-.p2{
+#span{
     margin-top: 2px;
     margin-bottom: 2px;
     word-spacing: 2px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#p1{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    word-spacing: 2px;
+    margin-left: 1%;
+    margin-right: 0;
+}
+
+.p2{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
+ 
  
 }
 .p3{
     margin-top: 2px;
     margin-bottom:10px;
-    word-spacing: 2px;
+    
  
+}
+
+.p4{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
+
+}
+
+.p5{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 1%;
+    margin-right: 0;
+
 }
 .input-box{
     display: flex;
@@ -148,9 +186,9 @@ span{
 .box2{
     position: absolute;
     top: 0;
-    width: 65%;
-    height: 600px;
-    margin-left: 20%;
+    width: 70%;
+    height: 700px;
+    margin-left: 15%;
     margin-top: 20px;
     border: 12px solid black;
     background-color: #f9e9e0;
@@ -159,22 +197,35 @@ span{
 
 }
 
-.tiny-box{
-    position: absolute;
-    border: 12px solid black;
-    height: 30px;
-    width: 30px;
 
+.box-img{
+    text-align: center;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
 }
 
 
 .imgg{
-    width: 8%;
-    height: auto;
+    width: 130px;
+    height: 130px;
     margin: 1% 1% 1% 1%;
     border: 1px solid orange;
     box-shadow: 3px 3px 3px 3px #ccc;
 }
+
+.intentos{
+    text-align: center;
+    width: 54%;
+    height: auto;
+    border: 4px solid #38ACD5;
+    border-radius: 8px;
+    margin-left: 23%;
+    padding-bottom: 1%;
+}
+
+
+
 
 
 

@@ -12,44 +12,66 @@
 
 */
 
+let cantidadIntentos = 0;
+let nivel = "";
+/*trayendo los ids de las cajas principales */
 const mainBox = document.getElementById("main-box");
 const box2 = document.getElementById("box2");
 
-function addItem(){
-    const taskValue = document.getElementById("inputTask").value;
-    console.log(taskValue);
+function addItem(e){
+
     
+     /*levantando el valor del input  */
+    const taskValue = document.getElementById("inputTask").value;
 
     addElement(taskValue);
 
+    setDificulty(e)
+    /*dejando la primer caja estatica para poder mostrar la segunda caja */
     mainBox.classList.add("hide");
     box2.classList.remove("hide");
+   
 
+   
+   
 }
 
-function addElement(type,content){
-    const elem = document.createElement(type);
+function addElement(content){
+    const span = document.getElementById("span");
+    span.classList.add("span-input");
+
+
     const text = document.createTextNode(content);
-   
-   
 
-    elem.appendChild(text);
+    span.appendChild(text);
 
-    
 
 }
+ 
 
-function addBtn(btnOne, btnTwo, btnThree){
-    const facil = document.getElementById("btn1"); //18
-    const intermedio = document.getElementById("btn2"); //12
-    const dificil = document.getElementById("btn3"); //9  
+function setDificulty(e){
+    /* trayendo el id p1, p2 para poder agregarle la cantidad de intentos y el respectivo nivel*/  
+    const intentos = document.getElementById("p1");
+    const dificultad = document.getElementById("p2"); 
+    const btnId = e.target.attributes.id.value;
 
-    const boton1 = document.createElement("p");
-    console.log(boton1);
-    const boton2 = document.createTextNode(btnOne);
+    if (btnId == "btn1") {
+         cantidadIntentos = 18;
+        nivel =" Nivel Facil";
+        
+    } else if (btnId == "btn2"){
+        cantidadIntentos = 12;
+        nivel ="Nivel Intermedio";
 
-    facil.appendChild(boton1);
+    } else if (btnId== "btn3"){
+       cantidadIntentos = 9;
+        nivel = "Nivel Experto";
 
+    }
+
+    intentos.innerHTML =cantidadIntentos;
+    dificultad.innerHTML =nivel;
+    
 
 
 }
