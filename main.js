@@ -10,18 +10,90 @@
 
 
 
-*/
+*/ 
 
+let contador =0;
+let img = [];
 let cantidadIntentos = 0;
 let nivel = "";
 /*trayendo los ids de las cajas principales */
 const mainBox = document.getElementById("main-box");
 const box2 = document.getElementById("box2");
 
-function addItem(e){
+let arrayImg = [
+    {
+        img: "imagenes/nena.jpg",
+        dataId: 0,
+    },
+    {
+        img: "imagenes/nena.jpg",
+        dataId: 1,
+    },
+    {
+        img: "imagenes/peces.jpg",
+        dataId: 2,
+    },
+    {
+        img: "imagenes/peces.jpg",
+        dataId: 3,
+    },
+    {
+        img: "imagenes/zapas.jpg",
+        dataId: 4,
+    },
+    {
+        img: "imagenes/zapas.jpg",
+        dataId: 5,
+    },
+    {
+        img: "imagenes/epelante.jpg",
+        dataId: 6,
+    },
+    {
+        img: "imagenes/epelante.jpg",
+        dataId: 7,
+    },
+    {
+        img: "imagenes/unichancho.jpg",
+        dataId: 8,
+    },
+    {
+        img: "imagenes/unichancho.jpg",
+        dataId: 9,
+    },
+    {
+        img: "imagenes/alce.jpg",
+        dataId: 10,
+    },
+    {
+        img: "imagenes/alce.jpg",
+        dataId: 11,
+    },
 
-    
-     /*levantando el valor del input  */
+
+];
+
+
+
+function shuffle(cardsArray) {
+    var j
+    var x
+    var i
+    for (i = cardsArray.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = cardsArray[i].dataId;
+        cardsArray[i].dataId = cardsArray[j].dataId;
+        cardsArray[j].dataId = x;
+    }
+    return cardsArray;
+}
+
+shuffle(arrayImg);
+
+function addItem(e) {
+
+
+    /*levantando el valor del input  */
     const taskValue = document.getElementById("inputTask").value;
 
     addElement(taskValue);
@@ -30,13 +102,13 @@ function addItem(e){
     /*dejando la primer caja estatica para poder mostrar la segunda caja */
     mainBox.classList.add("hide");
     box2.classList.remove("hide");
-   
 
-   
-   
+
+
+
 }
 
-function addElement(content){
+function addElement(content) {
     const span = document.getElementById("span");
     span.classList.add("span-input");
 
@@ -47,32 +119,118 @@ function addElement(content){
 
 
 }
- 
 
-function setDificulty(e){
-    /* trayendo el id p1, p2 para poder agregarle la cantidad de intentos y el respectivo nivel*/  
+
+function setDificulty(e) {
+    /* trayendo el id p1, p2 para poder agregarle la cantidad de intentos y el respectivo nivel*/
     const intentos = document.getElementById("p1");
-    const dificultad = document.getElementById("p2"); 
+    const dificultad = document.getElementById("p2");
     const btnId = e.target.attributes.id.value;
 
     if (btnId == "btn1") {
-         cantidadIntentos = 18;
-        nivel =" Nivel Facil";
-        
-    } else if (btnId == "btn2"){
-        cantidadIntentos = 12;
-        nivel ="Nivel Intermedio";
+        cantidadIntentos = 18;
+        nivel = " Nivel Facil";
 
-    } else if (btnId== "btn3"){
-       cantidadIntentos = 9;
+    } else if (btnId == "btn2") {
+        cantidadIntentos = 12;
+        nivel = "Nivel Intermedio";
+
+    } else if (btnId == "btn3") {
+        cantidadIntentos = 9;
         nivel = "Nivel Experto";
 
     }
 
-    intentos.innerHTML =cantidadIntentos;
-    dificultad.innerHTML =nivel;
-    
+    intentos.innerHTML = cantidadIntentos;
+    dificultad.innerHTML = nivel;
+
 
 
 }
 
+
+function addImg(e) {
+    /*reemplazando la cara de atras de las tarjetas con la cara de adelante */
+    const tapadaEvent = e.target.attributes[0].value;
+    for (let i = 0; i < arrayImg.length; i++) {
+        if (tapadaEvent == arrayImg[i].dataId) {
+            e.target.src = arrayImg[i].img
+
+
+        }
+       
+
+    }
+
+    addClick(e)
+   
+ 
+}
+
+
+function addClick(e){
+    const contadorInt = document.getElementById("int")
+    let obj = { src: "",
+                id: "",
+ }
+   
+   
+     if (img.length == 2){
+        img= [];
+
+      } if (img.length <=1) {
+          obj ={ src: e.target.attributes[4].value,
+            
+                 id:e.target.attributes[0].value
+
+          }
+    img.push(obj);
+    
+
+    }  
+    let firstImg = img[0].src;
+    let secondImg = img[1].src;
+ 
+    if (firstImg == secondImg && img.length==2 ) {
+        
+      
+   
+    } if (firstImg != secondImg && img.length==2 ){
+    
+        setTimeout(function()
+        {e.target.src="imagenes/tapada.jpg"
+        let id = img[0].id+""      
+        let varId = document.getElementById(id+ "")
+       
+       varId.src = "imagenes/tapada.jpg"    }, 500);
+
+    } if (contador.length == 2) {
+      contador ++
+    } console.log(contador++)
+
+    contadorInt.innerHTML = "Intentos: " + contador;
+
+   
+
+
+
+
+        
+    
+
+    
+}
+    
+    
+
+   
+   
+   
+   
+   
+   
+
+
+
+
+  
