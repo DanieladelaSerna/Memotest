@@ -11,7 +11,7 @@
 
 
 */ 
-
+let cantidadPares = 0;
 let contador =0;
 let img = [];
 let cantidadIntentos = 0;
@@ -192,6 +192,9 @@ function addClick(e){
     let secondImg = img[1].src;
  
     if (firstImg == secondImg && img.length==2 ) {
+        contador++
+        cantidadPares++
+        checkWin()
         
       
    
@@ -203,23 +206,39 @@ function addClick(e){
         let varId = document.getElementById(id+ "")
        
        varId.src = "imagenes/tapada.jpg"    }, 500);
+       contador++
+       checkWin()
 
-    } if (contador.length == 2) {
-      contador ++
-    } console.log(contador++)
+    }
 
     contadorInt.innerHTML = "Intentos: " + contador;
 
-   
-
-
-
-
-        
-    
-
     
 }
+
+function checkWin(){
+    let box = document.getElementById("final-box")
+    let background = document.getElementById("background")
+    let spanFinal= document.getElementById("final")
+    if (contador <= cantidadIntentos && cantidadPares==6) {
+        box.classList.remove("hide");
+        background.classList.remove("hide")
+        spanFinal.innerHTML= "GANASTE"
+
+    
+    } else if (contador > cantidadIntentos && cantidadPares <6 ){
+        box.classList.remove("hide");
+        background.classList.remove("hide")
+        spanFinal.innerHTML= "PERDISTE"
+        
+    }
+
+}
+
+function reload(){
+    location.reload();
+}
+
     
     
 
